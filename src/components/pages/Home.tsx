@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import fundoFuturista from '../../assets/fundo-futurista.png';
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
           A tecnologia do sabor
         </h1>
         <p className="text-lg md:text-xl text-gray-400 mb-8 drop-shadow-md cursor-pointer transition-all duration-300 hover:text-cyan-300 hover:scale-105">
-Peça agora sua comida favorita que ela vai voando até você!
+          Sua comida tecnologica!
         </p>
         <Link
           to="/produtos"
