@@ -11,10 +11,10 @@ function Home() {
           Sua comida tecnologica!
         </p>
         <Link
-          to="/produtos"
+          to="/restaurantes"
           className="bg-gradient-to-r from-cyan-400 to-fuchsia-600 hover:from-cyan-500 hover:to-fuchsia-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
         >
-          Ver Produtos
+          Ver Restaurantes
         </Link>
       </div>
     </div>
