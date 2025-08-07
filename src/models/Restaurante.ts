@@ -1,4 +1,7 @@
-export default interface Restaurante { 
+export default interface Restaurante {
+        avaliacao: ReactNode;
+        categoria: ReactNode;
+        imagem: string | undefined; 
         id: number;
         nome: string;   
         endereco: string;
