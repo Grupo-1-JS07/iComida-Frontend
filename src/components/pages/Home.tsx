@@ -8,7 +8,7 @@ function Home() {
           A tecnologia do sabor
         </h1>
         <p className="text-lg md:text-xl text-gray-400 mb-8 drop-shadow-md cursor-pointer transition-all duration-300 hover:text-cyan-300 hover:scale-105">
-          Sua comida tecnologica!
+          Hackeando a sua fome - O cardápio do amanhã!
         </p>
         <Link
           to="/restaurantes"

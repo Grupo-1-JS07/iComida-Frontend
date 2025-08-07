@@ -13,7 +13,7 @@ function SobreNos() {
   const teamMembers = [
             { name: 'Daniel', photo: Daniel, bio: 'Compreende as necessidades dos nossos usuários para criar uma jornada de compra perfeita.' },
       { name: 'Brenndha', photo: Brenndha, bio: 'Nossa ligação com a gastronomia. Seleciona os melhores restaurantes.' },
-    { name: 'kannanda', photo: Kannanda, bio: 'Visão e inovação para o futuro do delivery' },
+    { name: 'Kannanda', photo: Kannanda, bio: 'Visão e inovação para o futuro do delivery' },
   { name: 'Monique', photo: Monique, bio: 'Traduz a nossa paixão por tecnologia em campanhas de marketing.' },
       { name: 'Rafael', photo: Rafael, bio: 'Otimiza rotas de voo e garante que cada pacote chegue ao seu destino.' },
       { name: 'Sâmara', photo: Sâmara, bio: 'Arquiteto dos algoritmos de IA que gerenciam nossa frota de drones.' },
