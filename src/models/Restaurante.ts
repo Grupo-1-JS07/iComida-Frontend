@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export default interface Restaurante {
         avaliacao: ReactNode;
         categoria: ReactNode;
