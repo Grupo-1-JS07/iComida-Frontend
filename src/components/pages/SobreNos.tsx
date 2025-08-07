@@ -1,23 +1,57 @@
-import fundoTime from '../../assets/fundo-futurista.png';
+import fundoTime from "../../assets/fundo-futurista.png";
 
 // Importe as fotos dos integrantes aqui
-import fotoSara from '../../assets/sara.jpg';
-import Kannanda from '../../assets/kannanda.jpg';
-import Rafael from '../../assets/rafael.jpg';
-import Monique from '../../assets/Monique.jpg';
-import Brenndha from '../../assets/Brenndha.jpg';
-import Daniel from '../../assets/Daniel.jpg';
-import Sâmara from '../../assets/Sâmara.jpeg';
+import fotoSara from "../../assets/sara.jpg";
+import Kannanda from "../../assets/kannanda.jpg";
+import Rafael from "../../assets/rafael.jpg";
+import Monique from "../../assets/Monique.jpg";
+import Brenndha from "../../assets/Brenndha.jpg";
+import Daniel from "../../assets/Daniel.jpg";
+import Sâmara from "../../assets/Sâmara.jpeg";
+import Equipe from "../../assets/equipe.png";
 
 function SobreNos() {
   const teamMembers = [
-            { name: 'Daniel', photo: Daniel, bio: 'Compreende as necessidades dos nossos usuários para criar uma jornada de compra perfeita.' },
-      { name: 'Brenndha', photo: Brenndha, bio: 'Nossa ligação com a gastronomia. Seleciona os melhores restaurantes.' },
-    { name: 'Kannanda', photo: Kannanda, bio: 'Visão e inovação para o futuro do delivery' },
-  { name: 'Monique', photo: Monique, bio: 'Traduz a nossa paixão por tecnologia em campanhas de marketing.' },
-      { name: 'Rafael', photo: Rafael, bio: 'Otimiza rotas de voo e garante que cada pacote chegue ao seu destino.' },
-      { name: 'Sâmara', photo: Sâmara, bio: 'Arquiteto dos algoritmos de IA que gerenciam nossa frota de drones.' },
-  { name: 'Sara', photo: fotoSara, bio: 'Responsável pela estética futurista da nossa plataforma.' }
+    {
+      name: "Groupo 1",
+      photo: Equipe,
+      bio: "Equipe de desenvolvedores do BootCamp JavaScript FullStack",
+    },
+    {
+      name: "Daniel",
+      photo: Daniel,
+      bio: "Compreende as necessidades dos nossos usuários para criar uma jornada de compra perfeita.",
+    },
+    {
+      name: "Brenndha",
+      photo: Brenndha,
+      bio: "Nossa ligação com a gastronomia. Seleciona os melhores restaurantes.",
+    },
+    {
+      name: "Kannanda",
+      photo: Kannanda,
+      bio: "Visão e inovação para o futuro do delivery",
+    },
+    {
+      name: "Monique",
+      photo: Monique,
+      bio: "Traduz a nossa paixão por tecnologia em campanhas de marketing.",
+    },
+    {
+      name: "Rafael",
+      photo: Rafael,
+      bio: "Otimiza rotas de voo e garante que cada pacote chegue ao seu destino.",
+    },
+    {
+      name: "Sâmara",
+      photo: Sâmara,
+      bio: "Arquiteto dos algoritmos de IA que gerenciam nossa frota de drones.",
+    },
+    {
+      name: "Sara",
+      photo: fotoSara,
+      bio: "Responsável pela estética futurista da nossa plataforma.",
+    },
   ];
 
   return (
@@ -30,7 +64,9 @@ function SobreNos() {
           Sobre Nós
         </h1>
         <p className="text-lg text-gray-300 mb-8 drop-shadow-md">
-          Bem-vindo ao Icomida, a sua solução de delivery com um toque do futuro! Somos uma equipe de jovens entusiastas da tecnologia apaixonados por gastronomia e inovação.
+          Bem-vindo ao Icomida, a sua solução de delivery com um toque do
+          futuro! Somos uma equipe de jovens entusiastas da tecnologia
+          apaixonados por gastronomia e inovação.
         </p>
       </div>
 
@@ -40,7 +76,10 @@ function SobreNos() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {teamMembers.map((member, index) => (
-            <div key={index} className="bg-gray-800/70 rounded-lg p-4 text-center backdrop-blur-md">
+            <div
+              key={index}
+              className="bg-gray-800/70 rounded-lg p-4 text-center backdrop-blur-md"
+            >
               <div className="relative w-32 h-32 rounded-full mx-auto overflow-hidden border-2 border-cyan-300">
                 <img
                   src={member.photo}
@@ -49,7 +88,9 @@ function SobreNos() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-cyan-600/30 rounded-full"></div>
               </div>
-              <h3 className="text-lg font-semibold mt-3 text-gray-300">{member.name}</h3>
+              <h3 className="text-lg font-semibold mt-3 text-gray-300">
+                {member.name}
+              </h3>
               <p className="text-sm text-gray-400">{member.bio}</p>
             </div>
           ))}

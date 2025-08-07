@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type Restaurante from "../../models/Restaurante";
 import fundoRestaurante from "../../assets/fundorestau.jpg";
 import {
@@ -82,6 +83,13 @@ const filtros = [
 ];
 
 function Restaurantes() {
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState("Todos");
+
+  const restaurantesFiltrados =
+    categoriaSelecionada === "Todos"
+      ? restaurantes
+      : restaurantes.filter((rest) => rest.categoria === categoriaSelecionada);
+
   return (
     <div
       className="bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-screen text-white p-8"
@@ -98,8 +106,12 @@ function Restaurantes() {
           {filtros.map((filtro, index) => (
             <button
               key={index}
-              className="flex items-center gap-3 p-3 rounded-lg text-lg text-gray-300 
-                         hover:bg-cyan-600/30 transition-colors duration-200"
+              onClick={() => setCategoriaSelecionada(filtro.nome)}
+              className={`flex items-center gap-3 p-3 rounded-lg text-lg transition-colors duration-200 ${
+                categoriaSelecionada === filtro.nome
+                  ? "bg-cyan-600/30 text-cyan-300 font-bold"
+                  : "text-gray-300 hover:bg-cyan-600/20"
+              }`}
             >
               <filtro.icone className="text-cyan-400" />
               <span>{filtro.nome}</span>
@@ -113,10 +125,10 @@ function Restaurantes() {
             Restaurantes
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto h-[90%] pr-4">
-            {restaurantes.map((restaurante) => (
+            {restaurantesFiltrados.map((restaurante) => (
               <div
                 key={restaurante.id}
-                className="bg-gray-700/70 rounded-lg p-4 text-center group transform transition-all duration-300 hover:scale-105 hover:shadow-cyan-500/50 hover:shadow-lg"
+                className="bg-gray-700/70 rounded-lg p-4 h-[25vh] text-center group transform transition-all duration-300 hover:scale-105 hover:shadow-cyan-500/50 hover:shadow-lg"
               >
                 <div className="relative w-full h-40 rounded-lg mx-auto overflow-hidden border-2 border-transparent transition-all duration-300 group-hover:border-cyan-300">
                   <img
