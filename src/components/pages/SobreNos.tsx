@@ -3,7 +3,7 @@ import fundoTime from '../../assets/fundo-futurista.png';
 // Importe as fotos dos integrantes aqui
 import fotoSara from '../../assets/sara.jpg';
 import Kannanda from '../../assets/kannanda.jpg';
-import Rafael from '../../assets/Rafael.jpg';
+import Rafael from '../../assets/rafael.jpg';
 import Monique from '../../assets/Monique.jpg';
 import Brenndha from '../../assets/Brenndha.jpg';
 import Daniel from '../../assets/Daniel.jpg';
