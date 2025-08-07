@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ShoppingCartSimple, UserCircle } from "@phosphor-icons/react";
-import fundoFuturista from "../../assets/fundo-futurista.png";
 function Navbar() {
   return (
     <div className="w-full bg-gray-950/70 backdrop-blur-md text-white flex justify-center py-4 border-b border-gray-800 h-16 fixed top-0 left-0 z-50">
