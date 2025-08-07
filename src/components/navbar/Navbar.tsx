@@ -23,7 +23,7 @@ function Navbar() {
             Restaurantes
           </Link>
           <Link
-            to="/categorias"
+            to="/restaurantes"
             className="hover:text-cyan-400 transition-colors"
           >
             Categorias

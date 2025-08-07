@@ -1,6 +1,13 @@
 import type Restaurante from "../../models/Restaurante";
 import fundoRestaurante from "../../assets/fundorestau.jpg";
-import { FaHamburger, FaPizzaSlice, FaCoffee, FaLeaf, FaUtensils, FaStar } from 'react-icons/fa';
+import {
+  FaHamburger,
+  FaPizzaSlice,
+  FaCoffee,
+  FaLeaf,
+  FaUtensils,
+  FaStar,
+} from "react-icons/fa";
 
 const restaurantes: Restaurante[] = [
   {
@@ -31,7 +38,7 @@ const restaurantes: Restaurante[] = [
     telefone: "(11) 91234-5678",
     imagem: "imagemRestaurante3.png",
     categoria: "Hambúrgueres",
-    avaliacao: 5.0
+    avaliacao: 5.0,
   },
   {
     id: 4,
@@ -41,7 +48,7 @@ const restaurantes: Restaurante[] = [
     telefone: "(11) 99876-5432",
     imagem: "imagemRestaurante4.png",
     categoria: "Pizzas",
-    avaliacao: 4.7
+    avaliacao: 4.7,
   },
   {
     id: 5,
@@ -61,17 +68,17 @@ const restaurantes: Restaurante[] = [
     telefone: "(11) 98765-4321",
     imagem: "imagemRestaurante6.png",
     categoria: "Saúdaveis",
-    avaliacao: 4.8
+    avaliacao: 4.8,
   },
 ];
 
 const filtros = [
-  { nome: 'Todos', icone: FaUtensils },
-  { nome: 'Hambúrgueres', icone: FaHamburger },
-  { nome: 'Pizzas', icone: FaPizzaSlice },
-  { nome: 'Japonesa', icone: FaStar },
-  { nome: 'Saúdaveis', icone: FaLeaf },
-  { nome: 'Cafés', icone: FaCoffee },
+  { nome: "Todos", icone: FaUtensils },
+  { nome: "Hambúrgueres", icone: FaHamburger },
+  { nome: "Pizzas", icone: FaPizzaSlice },
+  { nome: "Japonesa", icone: FaStar },
+  { nome: "Saúdaveis", icone: FaLeaf },
+  { nome: "Cafés", icone: FaCoffee },
 ];
 
 function Restaurantes() {
@@ -113,18 +120,29 @@ function Restaurantes() {
               >
                 <div className="relative w-full h-40 rounded-lg mx-auto overflow-hidden border-2 border-transparent transition-all duration-300 group-hover:border-cyan-300">
                   <img
-                    src={new URL(`../../assets/${restaurante.imagem}`, import.meta.url).href}
+                    src={
+                      new URL(
+                        `../../assets/${restaurante.imagem}`,
+                        import.meta.url
+                      ).href
+                    }
                     alt={restaurante.nome}
                     className="w-full h-full object-cover rounded-lg"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent to-cyan-600/30 rounded-lg opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
                 </div>
 
-                <h3 className="text-xl font-semibold mt-4 text-gray-300">{restaurante.nome}</h3>
-                <span className="text-sm text-gray-400">{restaurante.categoria}</span>
+                <h3 className="text-xl font-semibold mt-4 text-gray-300">
+                  {restaurante.nome}
+                </h3>
+                <span className="text-sm text-gray-400">
+                  {restaurante.categoria}
+                </span>
                 <div className="flex items-center justify-center mt-2 text-yellow-400">
                   <FaStar />
-                  <span className="ml-1 text-gray-300">{restaurante.avaliacao}</span>
+                  <span className="ml-1 text-gray-300">
+                    {restaurante.avaliacao}
+                  </span>
                 </div>
               </div>
             ))}
