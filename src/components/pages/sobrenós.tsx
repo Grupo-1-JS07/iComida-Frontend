@@ -3,11 +3,11 @@ import fundoTime from '../../assets/fundo-futurista.png';
 // Importe as fotos dos integrantes aqui
 import fotoSara from '../../assets/sara.jpg';
 import Kannanda from '../../assets/kannanda.jpg';
-import Sâmara from '../../assets/Sâmara.jpg';
 import Rafael from '../../assets/Rafael.jpg';
 import Monique from '../../assets/Monique.jpg';
 import Brenndha from '../../assets/Brenndha.jpg';
 import Daniel from '../../assets/Daniel.jpg';
+import Sâmara from '../../assets/Sâmara.jpeg';
 
 function SobreNos() {
   const teamMembers = [
@@ -20,7 +20,7 @@ function SobreNos() {
   { name: 'Sara', photo: fotoSara, bio: 'Responsável pela estética futurista da nossa plataforma.' }
   ];
 
- return (
+  return (
     <div
       className="bg-cover bg-center bg-no-repeat flex flex-col items-center justify-start text-white min-h-screen p-8"
       style={{ backgroundImage: `url(${fundoTime})` }}
