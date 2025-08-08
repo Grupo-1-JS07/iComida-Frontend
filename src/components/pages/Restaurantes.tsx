@@ -1,5 +1,6 @@
 import type Restaurante from "../../models/Restaurante";
 import fundoRestaurante from "../../assets/fundorestau.jpg";
+import { useState } from "react";
 import {
   FaHamburger,
   FaPizzaSlice,
@@ -82,15 +83,22 @@ const filtros = [
 ];
 
 function Restaurantes() {
+  const [filtroAtivo, setFiltroAtivo] = useState("Todos");
+
+  const restaurantesFiltrados = restaurantes.filter(
+    (restaurante) =>
+      filtroAtivo === "Todos" || restaurante.categoria === filtroAtivo
+  );
+
   return (
     <div
       className="bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-screen text-white p-8"
       style={{ backgroundImage: `url(${fundoRestaurante})` }}
     >
       <div
-        className="bg-black/40 backdrop-blur-md rounded-3xl p-10 
-                   border border-solid border-cyan-500/50 shadow-[0_0_20px_rgba(50,200,255,0.7)] 
-                   w-full max-w-6xl h-[80vh] flex flex-col md:flex-row gap-6"
+        className="bg-black/40 backdrop-blur-md rounded-3xl p-6 md:p-10 
+                   border border-solid border-cyan-500/50 shadow-[0_0_20px_rgba(50,200,255,0.7)]
+                   w-full max-w-6xl min-h-[80vh] md:h-[80vh] flex flex-col md:flex-row gap-6"
       >
         {/* Barra lateral de filtros */}
         <aside className="w-full md:w-1/4 p-4 bg-gray-800/70 rounded-2xl flex flex-col gap-4">
@@ -98,8 +106,14 @@ function Restaurantes() {
           {filtros.map((filtro, index) => (
             <button
               key={index}
-              className="flex items-center gap-3 p-3 rounded-lg text-lg text-gray-300 
-                         hover:bg-cyan-600/30 transition-colors duration-200"
+              onClick={() => setFiltroAtivo(filtro.nome)}
+              className={`flex items-center gap-3 p-3 rounded-lg text-lg text-gray-300 
+                         hover:bg-cyan-600/30 transition-colors duration-200
+                         ${
+                           filtroAtivo === filtro.nome
+                             ? "bg-cyan-600/40"
+                             : ""
+                         }`}
             >
               <filtro.icone className="text-cyan-400" />
               <span>{filtro.nome}</span>
@@ -113,7 +127,7 @@ function Restaurantes() {
             Restaurantes
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto h-[90%] pr-4">
-            {restaurantes.map((restaurante) => (
+            {restaurantesFiltrados.map((restaurante) => (
               <div
                 key={restaurante.id}
                 className="bg-gray-700/70 rounded-lg p-4 text-center group transform transition-all duration-300 hover:scale-105 hover:shadow-cyan-500/50 hover:shadow-lg"

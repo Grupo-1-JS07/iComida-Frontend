@@ -1,4 +1,4 @@
-import fundoTime from '../../assets/fundo-futurista.png';
+import fundoTime from '../../assets/fundorestau.jpg';
 
 // Importe as fotos dos integrantes aqui
 import fotoSara from '../../assets/sara.jpg';
@@ -20,28 +20,28 @@ function SobreNos() {
   { name: 'Sara', photo: fotoSara, bio: 'Responsável pela estética futurista da nossa plataforma.' }
   ];
 
- return (
+return (
     <div
-      className="bg-cover bg-center bg-no-repeat flex flex-col items-center justify-start text-white min-h-screen p-8"
+      className="bg-cover bg-center bg-no-repeat flex flex-col items-center justify-start text-white min-h-screen p-4 sm:p-8"
       style={{ backgroundImage: `url(${fundoTime})` }}
     >
-      <div className="bg-black/50 rounded-lg p-10 text-center w-full md:w-4/5 lg:w-3/4 mb-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-600 mb-6 drop-shadow-md">
+      <div className="bg-black/50 rounded-xl p-6 sm:p-10 text-center w-full max-w-4xl mb-12 backdrop-blur-sm">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-600 mb-6 drop-shadow-md">
           Sobre Nós
         </h1>
-        <p className="text-lg text-gray-300 mb-8 drop-shadow-md">
+        <p className="text-base sm:text-lg text-gray-300 mb-8 drop-shadow-md">
           Bem-vindo ao Icomida, a sua solução de delivery com um toque do futuro! Somos uma equipe de jovens entusiastas da tecnologia apaixonados por gastronomia e inovação.
         </p>
       </div>
 
-      <section className="w-full md:w-4/5 lg:w-3/4 bg-gray-900/70 rounded-lg p-8 backdrop-blur-md">
+      <section className="w-full max-w-6xl bg-gray-900/70 rounded-xl p-6 sm:p-8 backdrop-blur-md">
         <h2 className="text-3xl font-semibold text-cyan-400 mb-6 text-center drop-shadow-md">
           Nosso Time
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {teamMembers.map((member, index) => (
-            <div key={index} className="bg-gray-800/70 rounded-lg p-4 text-center backdrop-blur-md">
-              <div className="relative w-32 h-32 rounded-full mx-auto overflow-hidden border-2 border-cyan-300">
+            <div key={index} className="bg-gray-800/70 rounded-lg p-4 text-center hover:scale-105 transition-transform duration-300">
+              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full mx-auto overflow-hidden border-2 border-cyan-300">
                 <img
                   src={member.photo}
                   alt={member.name}
