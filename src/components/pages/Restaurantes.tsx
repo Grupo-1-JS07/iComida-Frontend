@@ -1,6 +1,14 @@
+import { useState } from "react";
 import type Restaurante from "../../models/Restaurante";
 import fundoRestaurante from "../../assets/fundorestau.jpg";
-import { useState } from "react";
+
+import imgCafeAurora from "../../assets/imagemRestaurante1.png";
+import imgSaborCasa from "../../assets/imagemRestaurante2.png";
+import imgBurgerStation from "../../assets/imagemRestaurante3.png";
+import imgLaForneria from "../../assets/imagemRestaurante4.png";
+import imgSatoriSushi from "../../assets/imagemRestaurante5.png";
+import imgVerdeVital from "../../assets/imagemRestaurante6.png";
+
 import {
   FaHamburger,
   FaPizzaSlice,
@@ -14,62 +22,62 @@ const restaurantes: Restaurante[] = [
   {
     id: 1,
     nome: "Café Aurora",
-    endereco: "Rua das Laranjeiras, 1287",
-    cnpj: "12.345.678/0001-90",
-    telefone: "(11) 3456-7890",
-    imagem: "imagemRestaurante1.png",
+    imagem: imgCafeAurora,
     categoria: "Cafés",
     avaliacao: 4.5,
+    endereco: "Rua das Flores, 123 - São Paulo, SP",
+    cnpj: "12.345.678/0001-90",
+    telefone: "(11) 98765-4321",
   },
   {
     id: 2,
     nome: "Sabor da Casa",
-    endereco: "Avenida das Palmeiras, 452",
-    cnpj: "98.765.432/0001-55",
-    telefone: "(11) 99876-5432",
-    imagem: "imagemRestaurante2.png",
+    imagem: imgSaborCasa,
     categoria: "Todos",
     avaliacao: 4.1,
+    endereco: "Av. Brasil, 456 - São Paulo, SP",
+    cnpj: "98.765.432/0001-12",
+    telefone: "(11) 91234-5678",
   },
   {
     id: 3,
     nome: "Burger Station",
-    endereco: "Rua das Flores, 789",
-    cnpj: "45.678.910/0001-22",
-    telefone: "(11) 91234-5678",
-    imagem: "imagemRestaurante3.png",
+    imagem: imgBurgerStation,
     categoria: "Hambúrgueres",
     avaliacao: 5.0,
+    endereco: "Rua do Hambúrguer, 789 - São Paulo, SP",
+    cnpj: "11.222.333/0001-44",
+    telefone: "(11) 99876-5432",
   },
   {
     id: 4,
     nome: "La Forneria Paulista",
-    endereco: "Praça Itália, 101",
-    cnpj: "12.345.678/0001-99",
-    telefone: "(11) 99876-5432",
-    imagem: "imagemRestaurante4.png",
+    imagem: imgLaForneria,
     categoria: "Pizzas",
     avaliacao: 4.7,
+    endereco: "Rua da Pizza, 321 - São Paulo, SP",
+    cnpj: "22.333.444/0001-55",
+    telefone: "(11) 93456-7890",
   },
   {
     id: 5,
     nome: "Satori Sushi Lounge",
-    endereco: "Avenida Brasil, 202",
-    cnpj: "33.987.654/0001-88",
-    telefone: "(11) 93456-7890",
-    imagem: "imagemRestaurante5.png",
+    imagem: imgSatoriSushi,
     categoria: "Japonesa",
     avaliacao: 4.3,
+    endereco: "Av. Japão, 654 - São Paulo, SP",
+    cnpj: "33.444.555/0001-66",
+    telefone: "(11) 94567-1234",
   },
   {
     id: 6,
     nome: "Verde & Vital",
-    endereco: "Rua Verde, 303",
-    cnpj: "77.123.456/0001-44",
-    telefone: "(11) 98765-4321",
-    imagem: "imagemRestaurante6.png",
+    imagem: imgVerdeVital,
     categoria: "Saúdaveis",
     avaliacao: 4.8,
+    endereco: "Rua Verde, 987 - São Paulo, SP",
+    cnpj: "44.555.666/0001-77",
+    telefone: "(11) 95678-4321",
   },
 ];
 
@@ -83,12 +91,12 @@ const filtros = [
 ];
 
 function Restaurantes() {
-  const [filtroAtivo, setFiltroAtivo] = useState("Todos");
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState("Todos");
 
-  const restaurantesFiltrados = restaurantes.filter(
-    (restaurante) =>
-      filtroAtivo === "Todos" || restaurante.categoria === filtroAtivo
-  );
+  const restaurantesFiltrados =
+    categoriaSelecionada === "Todos"
+      ? restaurantes
+      : restaurantes.filter((rest) => rest.categoria === categoriaSelecionada);
 
   return (
     <div
@@ -106,14 +114,12 @@ function Restaurantes() {
           {filtros.map((filtro, index) => (
             <button
               key={index}
-              onClick={() => setFiltroAtivo(filtro.nome)}
-              className={`flex items-center gap-3 p-3 rounded-lg text-lg text-gray-300 
-                         hover:bg-cyan-600/30 transition-colors duration-200
-                         ${
-                           filtroAtivo === filtro.nome
-                             ? "bg-cyan-600/40"
-                             : ""
-                         }`}
+              onClick={() => setCategoriaSelecionada(filtro.nome)}
+              className={`flex items-center gap-3 p-3 rounded-lg text-lg transition-colors duration-200 ${
+                categoriaSelecionada === filtro.nome
+                  ? "bg-cyan-600/30 text-cyan-300 font-bold"
+                  : "text-gray-300 hover:bg-cyan-600/20"
+              }`}
             >
               <filtro.icone className="text-cyan-400" />
               <span>{filtro.nome}</span>
@@ -134,12 +140,7 @@ function Restaurantes() {
               >
                 <div className="relative w-full h-40 rounded-lg mx-auto overflow-hidden border-2 border-transparent transition-all duration-300 group-hover:border-cyan-300">
                   <img
-                    src={
-                      new URL(
-                        `../../assets/${restaurante.imagem}`,
-                        import.meta.url
-                      ).href
-                    }
+                    src={restaurante.imagem}
                     alt={restaurante.nome}
                     className="w-full h-full object-cover rounded-lg"
                   />
@@ -152,6 +153,13 @@ function Restaurantes() {
                 <span className="text-sm text-gray-400">
                   {restaurante.categoria}
                 </span>
+
+                <p className="text-sm text-gray-400 mt-2">
+                  {restaurante.endereco}
+                </p>
+                <p className="text-sm text-gray-400">CNPJ: {restaurante.cnpj}</p>
+                <p className="text-sm text-gray-400">Tel: {restaurante.telefone}</p>
+
                 <div className="flex items-center justify-center mt-2 text-yellow-400">
                   <FaStar />
                   <span className="ml-1 text-gray-300">

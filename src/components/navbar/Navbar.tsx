@@ -23,7 +23,7 @@ function Navbar() {
 
         {/* Menu principal */}
         <nav className={`flex-col md:flex md:flex-row md:items-center gap-6 ${menuAberto ? "flex" : "hidden"} md:gap-8`}>
-          <Link to="/" className="hover:text-cyan-400 transition-colors">Home</Link>
+          <Link to="/home" className="hover:text-cyan-400 transition-colors">Home</Link>
           <Link to="/restaurantes" className="hover:text-cyan-400 transition-colors">Restaurantes</Link>
           <Link to="/sobrenos" className="hover:text-cyan-400 transition-colors">Sobre Nós</Link>
           <div className="flex items-center gap-4 mt-4 md:mt-0">

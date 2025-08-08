@@ -1,70 +1,91 @@
-# React + TypeScript + Vite
+# 🍔 iComida
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**iComida** é a aplicação frontend de um sistema de pedidos de comida com estética futurística, desenvolvida em equipe usando **React**, **TypeScript** e **Vite**. Oferece interface moderna e responsiva para navegar pelo cardápio, escolher pratos e simular um pedido em um ambiente visual high-tech.
 
-Currently, two official plugins are available:
+🌐 **Deploy ao vivo:** [Clique aqui!](https://icomida.netlify.app/home)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Descrição
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Este projeto faz parte da trilha de desenvolvimento web em equipe e recria a experiência de um cliente de restaurante online em um cenário futurista. A interface permite:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Exibir destaques do cardápio na página **Home**  
+- Visualizar nome, categoria e avaliação dos restaurantes
+- Responsividade para desktop e mobile  
+- Fluxo de navegação fluido com efeitos visuais modernos  
+- Componentes reutilizáveis para manutenção ágil  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠 Tecnologias
+
+- **React** (v18)  
+- **TypeScript**  
+- **Vite**  
+- **Tailwind CSS**  
+- **React Router**  
+- **Axios** (requisições HTTP simuladas)  
+- **Netlify** (deploy contínuo)  
+
+---
+
+## 📁 Estrutura de Pastas
+
+```plaintext
+iComida-Frontend/
+├── public/                 
+├── src/
+│   ├── assets/             
+│   ├── components/         
+│   ├── models/             
+│   ├── App.css             
+│   ├── App.tsx             
+│   ├── index.css           
+│   └── main.tsx           
+│   ├── vite-env.d.ts
+├── .gitignore              
+├── index.html              
+├── package.json            
+├── tsconfig.json           
+└── vite.config.ts
+└── ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Como rodar localmente
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone o repositório
 ```
-# iComida-Frontend
+git clone https://github.com/Grupo-1-JS07/iComida-Frontend.git
+cd iComida-Frontend
+```
+
+### 2. Instale as dependências
+```
+npm install ou yarn
+```
+
+### 3. Inicie em modo de desenvolvimento
+```
+npm run dev ou yarn dev
+```
+
+### 4. Abra no navegador acessando: ``` http://localhost:5173 ``` (porta padrão do Vite)
+
+---
+
+## 💡 Decisões Técnicas
+
+- Vite por build ultrarrápido e hot-reload instantâneo.
+- Tailwind CSS para estilização ágil e design futurista consistente.
+- React Router para SPA com navegação sem recarga.
+- Axios para simular chamadas a API de pedidos e cardápio.
+- Componentização: UI isolada em components/ para reuso e manutenção.
+
+---
+
+## 📌 Autores
+
+[Brenndha Cabral](https://www.linkedin.com/in/brenndhacabral/) | [Daniel Souza](https://www.linkedin.com/in/daniel-castro-de-souza-602491133/) | [Kannanda Andrade](https://www.linkedin.com/in/nnandak/) | [Monique Ohana](https://www.linkedin.com/in/moniqueohana/) | [Rafael Santanna](https://www.linkedin.com/in/rafael-selles-sant-anna/) | [Sara Silva](https://www.linkedin.com/in/sara-silva-9739b0183/) | [Sâmara Dias](www.linkedin.com/in/sâmara-jeise-dias)
